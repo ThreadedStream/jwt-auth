@@ -94,6 +94,7 @@ func (a *App) Refresh(w http.ResponseWriter, r *http.Request) {
 	data, ok := a.FindRefreshTokenAndCheckValidity(checksum, reqEntities.RefreshToken)
 	if !ok {
 		w.WriteHeader(http.StatusUnauthorized)
+		return
 	}
 
 	//Stage when a client has granted permission to obtain necessary tokens

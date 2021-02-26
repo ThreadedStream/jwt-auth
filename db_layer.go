@@ -59,6 +59,11 @@ func (a *App) FindRefreshTokenAndCheckValidity(checksum, refreshToken string) (b
 		return nil, false
 	}
 
+	if len(data) == 0 {
+		//We don't want to get into trouble accessing fields of an empty map
+		return nil, false
+	}
+
 	token, ok := data[0]["refresh_token"]
 	tokenStr := fmt.Sprintf("%v", token)
 	if !ok {

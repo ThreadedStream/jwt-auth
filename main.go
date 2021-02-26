@@ -69,6 +69,6 @@ func main() {
 	a.Router.Path("/refresh").HandlerFunc(a.Refresh).Methods("POST")
 
 	log.Printf("Running server on %s\n", addr)
-	log.Fatal(http.ListenAndServe(addr, a.Router))
+	http.ListenAndServe(addr, a.Router)
 
 }
