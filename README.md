@@ -22,3 +22,11 @@ When running an application, ensure that mongodb server is running as well, it m
 After rerunning the server, user's credentials such as refresh token, token's expiration time, and also checksum get cleared, so
 be sure to hit signin endpoint once again.
 
+## Examples of requests
+
+Sign in request
+![Alternative text](assets/signin_request.png)
+
+Token refresh request
+![Alternative text](assets/refresh_request.png)
+
