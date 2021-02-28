@@ -39,6 +39,10 @@ func (a *App) FindUser(userGuid string) bool {
 		return false
 	}
 
+	if len(data) == 0{
+		return false
+	}
+
 	//At this point, we are in good position!
 	return true
 }

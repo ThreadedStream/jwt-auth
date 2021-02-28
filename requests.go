@@ -36,6 +36,7 @@ func (a *App) ObtainTokenPairApi(w http.ResponseWriter, r *http.Request) {
 	ok := a.FindUser(userCreds.Guid)
 	if !ok {
 		http.Error(w, "No such user in database", http.StatusBadRequest)
+		return
 	}
 
 	accessToken := jwt.New(jwt.SigningMethodHS512)
